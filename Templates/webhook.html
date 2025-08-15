@@ -1,0 +1,79 @@
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Webhooks</title>
+    <meta http-equiv="refresh" content="5">
+</head>
+<body class="webhooks-page">
+
+    <!-- Compact Right Toolbar -->
+    <div class="webhooks-toolbar">
+        <!-- Username -->
+        <p class="username">Logged in as {{username}}</p>
+        
+        <!-- Search -->
+        <div class="search-box">
+            <form method="POST" action="/search">
+                <input type="text" name="query" placeholder="Search...">
+                <input type="submit" value="🔍">
+            </form>
+        </div>
+        
+        <!-- Buttons -->
+        <div class="toolbar-buttons">
+            <form method="GET" action="/Hooks">
+                <button type="submit">Home</button>
+            </form>
+            <form method="POST" action="/logout" onsubmit="return confirmLogout()">
+                <button type="submit">Logout</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="webhooks-content">
+        <!-- Date filter -->
+        <form class="date-filter" method="POST" action="/Hooks">
+            <div class="filter-controls">
+                <label for="start">From:</label>
+                <input type="date" id="start" name="From_Date">
+                <label for="end">To:</label>
+                <input type="date" id="end" name="To_Date">
+                <input type="submit" value="Filter">
+            </div>
+        </form>
+
+        <!-- Table -->
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>repo_name</th>
+                    <th>Committer</th>
+                    <th>Added</th>
+                    <th>Removed</th>
+                    <th>Modified</th>
+                    <th>TimeStamp</th>
+                </tr>
+                {% for row in commits %}
+                <tr>
+                    <td>{{row[0]}}</td>
+                    <td>{{row[1]}}</td>
+                    <td>{{row[2]}}</td>
+                    <td>{{row[3]}}</td>
+                    <td>{{row[4]}}</td>
+                    <td>{{row[5]}}</td>
+                    <td>{{row[6]}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+    <script>
+    function confirmLogout() {
+        return confirm("You will be logged out. Do you want to continue?");
+    }
+    </script>
+</body>
+</html>

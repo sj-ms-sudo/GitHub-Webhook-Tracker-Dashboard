@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>HOME</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <h1>Dashboard</h1>
+        <div class="nav-links">
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+            <a href="/Hooks" class="primary">Dashboard</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="grid">
+            <div class="card">
+                <h2>Welcome to Our Platform</h2>
+                <p>Manage your account and access all features from one place.</p>
+                <a href="/register" class="btn">Get Started</a>
+            </div>
+            
+            <div class="card">
+                <h2>Already a Member?</h2>
+                <p>Sign in to access your personalized dashboard.</p>
+                <a href="/login" class="btn">Login Now</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

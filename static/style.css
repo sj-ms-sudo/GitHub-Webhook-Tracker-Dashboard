@@ -1,0 +1,385 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    min-height: 100vh;
+    color: #34495e;
+    line-height: 1.6;
+}
+
+/* Layout Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Navigation */
+nav {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.nav-links a.primary {
+    background: #3498db;
+}
+
+.nav-links a.primary:hover {
+    background: #2980b9;
+}
+
+/* Cards */
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Forms */
+form {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-width: 400px;
+    margin: 2rem auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="date"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form input[type="submit"],
+.btn {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+form input[type="submit"]:hover,
+.btn:hover {
+    background: #2980b9;
+}
+
+/* Buttons */
+button {
+    padding: 0.75rem 1.5rem;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #2c3e50;
+    color: white;
+    font-weight: 500;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Top Right Elements */
+.top-right {
+    position: absolute;
+    right: 20px;
+}
+
+.search-box {
+    top: 20px;
+}
+
+.username {
+    top: 60px;
+    color: #34495e;
+    font-weight: 500;
+}
+
+.home-btn {
+    top: 100px;
+}
+
+.logout-btn {
+    top: 140px;
+}
+
+/* Not Found Page */
+.not-found {
+    text-align: center;
+    padding: 4rem;
+}
+
+.not-found h1 {
+    font-size: 3rem;
+    color: #e74c3c;
+    margin-bottom: 1rem;
+}
+
+.not-found hr {
+    margin: 2rem auto;
+    width: 50%;
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+.not-found a {
+    display: inline-block;
+    margin: 0.5rem;
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.not-found a:hover {
+    color: #2980b9;
+}
+
+/* Success Page */
+.success-message {
+    text-align: center;
+    padding: 2rem;
+}
+
+.success-message h2 {
+    color: #27ae60;
+    margin-bottom: 1rem;
+}
+
+#login1 {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: background 0.3s;
+}
+
+#login1:hover {
+    background: #2980b9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .top-right {
+        position: static;
+        margin: 1rem;
+    }
+    
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Not Found Page */
+.not-found-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f7fa;
+}
+
+.not-found-container {
+    text-align: center;
+    padding: 3rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    max-width: 500px;
+    width: 90%;
+}
+
+.not-found-container h1 {
+    font-size: 3rem;
+    color: #e74c3c;
+    margin-bottom: 1rem;
+}
+
+.not-found-container h2 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+}
+
+.not-found-container hr {
+    margin: 1.5rem auto;
+    width: 100px;
+    border: none;
+    border-top: 2px solid #3498db;
+}
+
+.not-found-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.not-found-links a {
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.not-found-links a:first-child {
+    background: #3498db;
+    color: white;
+}
+
+.not-found-links a:first-child:hover {
+    background: #2980b9;
+}
+
+.not-found-links a:last-child {
+    border: 1px solid #3498db;
+    color: #3498db;
+}
+
+.not-found-links a:last-child:hover {
+    background: #f0f8ff;
+}
+
+/* Webhooks Page */
+.webhooks-page {
+    padding-top: 80px;
+}
+
+.webhooks-toolbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: white;
+    padding: 1rem;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-end;
+    z-index: 100;
+    border-bottom-left-radius: 8px;
+}
+
+.toolbar-buttons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.webhooks-content {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.date-filter {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+    align-items: right;
+}
+
+.filter-controls {
+    display: flex;
+    gap: 1rem;
+    align-items: right;
+    flex-wrap: wrap;
+}
+
+.table-container {
+    overflow-x: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1rem;
+}
