@@ -1,4 +1,3 @@
 Flask
 plyer
 werkzeug
-sqlite3
